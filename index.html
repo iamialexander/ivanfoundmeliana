@@ -3,24 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ivan dan Meliana 💖</title>
+  <title>Ivan untuk Meliana 💖</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <audio controls autoplay>
-    <source src="Luv Letter.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
 
-  <div class="container">
-    <h1>Untuk Meliana, dari Ivan ❤️</h1>
-    <p>Sejak aku mengenalmu, hari-hariku jadi lebih berarti.</p>
-    <p>Website ini aku buat khusus untuk kamu — sebagai tanda kecil dari rasa besar yang kupunya.</p>
-    <h2>💌 Aku cinta kamu, Meliana 💌</h2>
-    <p>Terima kasih sudah menjadi bagian terbaik dalam hidupku.</p>
-    <p>- Ivan</p>
+  <!-- Surat pembuka -->
+  <div id="envelope">
+    <h1>Sebuah Surat untuk Meliana 💌</h1>
+    <p>Surat ini dibuat dari hati Ivan...</p>
+    <button onclick="openLetter()">Buka Surat</button>
   </div>
 
-  <img src="ivan-meliana.jpg" alt="Foto Ivan dan Meliana" class="footer-image" />
+  <!-- Isi surat -->
+  <div id="letter" style="display: none;">
+    <div class="container">
+      <h1>Untuk Meliana, dari Ivan ❤️</h1>
+      <p>Sejak aku mengenalmu, hari-hariku jadi lebih berarti.</p>
+      <p>Website ini aku buat khusus untuk kamu — sebagai tanda kecil dari rasa besar yang kupunya.</p>
+      <h2>💌 Aku cinta kamu, Meliana 💌</h2>
+      <p>Terima kasih sudah menjadi bagian terbaik dalam hidupku.</p>
+      <p>- Ivan</p>
+    </div>
+
+    <img src="ivan-meliana.jpg" alt="Foto Ivan dan Meliana" class="footer-image" />
+    <audio id="bgm" src="Luv Letter.mp3" loop></audio>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById('envelope').style.display = 'none';
+      document.getElementById('letter').style.display = 'block';
+      const audio = document.getElementById('bgm');
+      if (audio) {
+        audio.play().catch(e => {
+          console.log("Audio autoplay ditolak: ", e);
+        });
+      }
+    }
+  </script>
 </body>
 </html>

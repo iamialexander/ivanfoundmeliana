@@ -33,3 +33,14 @@ p {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
+#envelope {
+  margin-top: 120px;
+}
+button {
+  font-size: 18px;
+  padding: 12px 24px;
+  background: #ffb6c1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
